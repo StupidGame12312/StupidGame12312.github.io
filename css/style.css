@@ -1,0 +1,66 @@
+*{
+	margin:  0;
+	padding: 0;
+	text-decoration: none;
+}
+body{
+	padding: 0 ;
+	font-family: 'Playfair Display SC', serif;
+}
+.logotype{
+	padding-top: 30px;
+	padding-bottom: 30px;
+
+	background-color: #191919;
+	width:  100%;
+	display:  flex;
+	justify-content:  center;
+}
+.logoImg
+{
+	box-sizing: border-box;
+	max-width: 100%;
+	padding:  10px;
+}
+nav{
+	widows:  800px;
+	height: 100px;
+	margin:  auto;
+	padding:30px;
+}
+.mainmenu{
+	text-align: center;
+	font-size: 25px;
+}
+.mainmenu a{
+	color: #191919;
+	transition: 0.5s;
+	padding: 3px 22px;
+	border-radius:15px;
+}
+.mainmenu a:hover{
+	transition: 0.5s;
+	color: #FFF;
+	background-color: #191919;
+}
+
+.Conntent {	
+	padding-top: 20px;
+}
+.Conntent .TextArea {
+	background-color: #191919;
+	height: 400px;
+	width : 1000px;
+	margin:  auto;
+	border-top: 10px solid green;
+	border-radius: 30px;
+
+}
+.Conntent .TextArea p {
+	font-size: 17px;
+}
+.Conntent .TextArea p , .Conntent .TextArea h3{
+	padding: 30px 30px;
+	color: #FFF;
+}
+
