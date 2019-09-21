@@ -18,6 +18,7 @@ header{
 	text-align:  center;
 	transition: 0.5s;
 }
+
 .logotype:first-letter{
 	color: red;
 }
@@ -45,22 +46,28 @@ header{
 }
 
 .target_body{
-	height: 700px;
+	height: 1000px;
 	width: 70%;
 	margin: 25px 15%;
 	background-color: rgba(0,0,0,0.2); 
 	overflow: auto;
 	display: flex;
 	flex-wrap: wrap;
-	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+	justify-content: center;
+	box-shadow: 0 0 30px rgba(0,0,0,0.2);
 
 }
+
 .item{
 	width: 300px;
 	height: 350px;
 
 	margin:15px;
 	background-color: white;
+	transition: 0.15s;
+}
+.item:hover{
+	opacity: 0.89;
 }
 .item .item__icon{
 	background-size: 280px 280px;
@@ -93,7 +100,83 @@ header{
 }
 
 
+.help__gui{
+	position: absolute;
+	width: 100%;
+	height: 135%;
+	right: 0;
+	top:0;
+	background-color: rgba(0,0,0,0.3);
+}
+#clouse__help__gui{
+	background: rgba(0,0,0,0);
+	width: 100px;
+	height: 100px;
+	border: none;
+	font-size: 70px;
+	float: right;
+
+}
+#clouse__help__gui:focus{
+	outline: none;
+}
+#clouse__help__gui:active{
+	opacity: 0.6;
+}
+.help__body{
+	font-family: 'Open Sans Condensed', sans-serif;
+	width: 1000px;
+	height: 1000px;
+	background: #FFF;
+
+	margin:auto;
+	margin-top: 10%;
+
+}
+.help__title{
+	padding-top: 25px;	
+	margin-left: 30px;
+	font-size: 40px;
+}
+.help__title:first-letter{
+	color: red;
+}
+.conatiner__help__gui{
+	width: 90%;
+	height: 86%;
+	margin: 20px 5%;
+}
+.help__icon{
+	width: 100%;
+	height: 150px;
+	font-size:30px;
+}
+.help__icon h5{
+	font-size: 45px;
+	color: orange;
+}
+
+footer{
+	width: 100%;
+	height: 150px;
+	margin-top: 100px;
+	right: 0;
+	bottom: 0;
+	background-color: #202020;
+	padding-top:20px; 
+}
+
+.context__data p {
+	font-size: 20px;
+	color:#6D6D6D;
+	text-align: center;	
+}
+
+
 @media screen and (max-width: 1300) {
+	.target_body{
+		height: 2500px;
+	}
 	.item{
 		width: 250px;
 		height: 300px;
@@ -107,13 +190,21 @@ header{
 }
 
 @media screen and (max-width: 800) {
+	.target_body{
+		margin: 25px 2%;
+		width: 94%;
+	}
 	.item{
 		width: 200px;
 		height: 250px;
 	}
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 970px) {
+	.target_body{
+		width: 90%;
+		margin: 25px 5%;
+	}
 	.topnav a{
 		font-size: 20px;
 	}
@@ -122,10 +213,7 @@ header{
 	}
 	.logotype p {font-size: 20px}
 	.logotype p {font-size: 30px}
-	.target_body{
-		margin: 25px 5%;
-		width: 90%;
-	}
+
 
 	.item{
 		width: 150px;
@@ -149,5 +237,14 @@ header{
 		margin-right: 5px;
 		padding: 3px;
 		transition: 0.3s;
+	}
+	#clouse__help__gui{
+		right: 20px;
+		top: 20px;
+		font-size: 50px;
+	}
+	.help__body{
+		margin-top: 170px;
+		width: 600px;
 	}
 }

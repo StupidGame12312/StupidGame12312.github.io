@@ -6,15 +6,18 @@
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
 	</head>
-<body>
+<body onload="Start();">
+
 	<header>
 		<div class="logotype"><p>Яндекс закладки</p></div>	
 	</header>
 	<div class="topnav">
-		<a href="">Магазин</a>
-		<a href="">Корзика</a>
-		<a href="">Помощь</a>
+		<a href="#">Магазин</a>
+		<a href="#">Корзика</a>
+		<a href="#" onclick="OpenHelpGUI();">Помощь</a>
 	</div>
+
+
 	
 	<div class="target_body" id="target_body">
 		<!-- Ellement pattern
@@ -22,27 +25,39 @@
 			<div class="item__icon"></div>
 			<div class="item__data">
 				<p>Кокаинум</p>
-				<input type="button" value="В корзину">
+				<input type="button" value="В корзину" >
 			</div>
 		</div>
 		-->
-
-		<script>
-			var name = "Ellement";
-			var url="https://st.depositphotos.com/2934187/3646/v/950/depositphotos_36465737-stock-illustration-cannabis-marihuana.jpg";
-			for (var i = 0; i < 10; i++) {
-				document.writeln("<div class=\"item\">"+
-				"<div class=\"item__icon\"  style=\"background-image:url("+url+")\"></div>"+
-				"<div class=\"item__data\">"+
-				"<p>"+(name+" "+ i )+"</p><input type=\"button\" value=\"В корзину\""+
-				">"+
-				"</div>"+
-				"</div>");
-			};
-		</script>
-	
 	</div>
-
+	<footer>
+		<div class="context__data">
+			<p>Данный сервис создан не яндексом и не имеет ничего общего с данной кампанией. Это всего лишь макет нерабочего сайта созданный в этапе обучения будущего верстальщика. Почта supreme#gmail.com</p>
+		</div>
+	</footer>
+	<div class="help__gui" id="help__gui" style="display: none;">
+		<div class="help__body">
+			<input type="button" id="clouse__help__gui" value="&times;">
+			<p class="help__title">Помощь</p>
+			<div class="conatiner__help__gui">
+				<div class="help__icon">
+					<h5>Главное</h5>
+					<p>Точки выдачи товара вы можете узнать при оформлении заказа.
+					<br>Работаем круглосуточно. <br>
+					Самый чистый и качественный товар.
+					<br>Гарантия 101%.
+					</p>
+					
+					<h5>Где мы?</h5>
+					<p>Города, в которых мы предоставляем услуги: Санкт-Питербург, Москва и всё.
+					<br></p>
+					<h5>Контакты</h5>
+					<p>Возник вопрос?<br>Нам насрать, даже пустой mail оставлять не будем.
+						<br>Вы никому не нужны!!!</p>
+				</div>
+			</div>
+		</div>
+	</div>
 	<script src="scripts/script.js"></script>
 </body>
 </html>
