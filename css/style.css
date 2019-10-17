@@ -101,9 +101,9 @@ header{
 
 
 .help__gui{
-	position: absolute;
+	position: fixed;
 	width: 100%;
-	height: 135%;
+	height: 100%;
 	right: 0;
 	top:0;
 	background-color: rgba(0,0,0,0.3);

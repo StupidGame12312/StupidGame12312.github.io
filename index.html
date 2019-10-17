@@ -5,59 +5,69 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-	</head>
-<body onload="Start();">
+</head>
+<body>
+	<canvas id="canvas" width="1200px" height="800px" style="background: rgb(30,30,50);"></canvas>
+	<script>
+		// Draw arguments
+		var canvas = document.getElementById('canvas');
+		var drawer = canvas.getContext('2d');
+		drawer.fillStyle = 'white';
+		drawer.strokeStyle = 'green';
+		var pxSize = 1;
+		var max = [canvas.width/pxSize , canvas.height/pxSize];
+		var fps = 20;
+		var time = 50 ;
+		var pos = [];
 
-	<header>
-		<div class="logotype"><p>Яндекс закладки</p></div>	
-	</header>
-	<div class="topnav">
-		<a href="#">Магазин</a>
-		<a href="#">Корзика</a>
-		<a href="#" onclick="OpenHelpGUI();">Помощь</a>
-	</div>
+		// Physic arguments 
+		var xForses = [-7 , 8];
+		var yForses = [6 ,-9];
+		var obj =[
+			max[0]/2 ,
+			max[1]/2 
+		];
 
+		function Draw (x , y) {
+			drawer.fillRect( x*pxSize ,y*pxSize, pxSize,pxSize);
+		}
 
-	
-	<div class="target_body" id="target_body">
-		<!-- Ellement pattern
-		<div class="item">
-			<div class="item__icon"></div>
-			<div class="item__data">
-				<p>Кокаинум</p>
-				<input type="button" value="В корзину" >
-			</div>
-		</div>
-		-->
-	</div>
-	<footer>
-		<div class="context__data">
-			<p>Данный сервис создан не яндексом и не имеет ничего общего с данной кампанией. Это всего лишь макет нерабочего сайта созданный в этапе обучения будущего верстальщика. Почта supreme#gmail.com</p>
-		</div>
-	</footer>
-	<div class="help__gui" id="help__gui" style="display: none;">
-		<div class="help__body">
-			<input type="button" id="clouse__help__gui" value="&times;">
-			<p class="help__title">Помощь</p>
-			<div class="conatiner__help__gui">
-				<div class="help__icon">
-					<h5>Главное</h5>
-					<p>Точки выдачи товара вы можете узнать при оформлении заказа.
-					<br>Работаем круглосуточно. <br>
-					Самый чистый и качественный товар.
-					<br>Гарантия 101%.
-					</p>
-					
-					<h5>Где мы?</h5>
-					<p>Города, в которых мы предоставляем услуги: Санкт-Питербург, Москва и всё.
-					<br></p>
-					<h5>Контакты</h5>
-					<p>Возник вопрос?<br>Нам насрать, даже пустой mail оставлять не будем.
-						<br>Вы никому не нужны!!!</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="scripts/script.js"></script>
+		function DrawLine (x ,y ,_x,_y) {
+			drawer.beginPath();
+			drawer.moveTo(x*pxSize, y*pxSize);
+			drawer.lineTo(_x*pxSize, _y*pxSize);
+			drawer.stroke(); 
+		}
+		function DrawForces () {
+			for(var i = 0 ; i < xForses.length; i++){
+				DrawLine(max[0]/2 ,max[1]/2 , max[0]/2 + xForses[i]*10 ,max[1]/2);
+			}
+			for (var i = 0; i < yForses.length; i++) {
+				DrawLine(max[0]/2 ,max[1]/2 ,max[0]/2 ,  max[1]/2 + yForses[i]*10 );
+			};
+		}
+
+		function loop () {
+			console.log(1);
+			// Reset x position
+			pos.push([obj[0] - max[0]/2 ,  -1* (obj[1] - max[1]/2) ]);
+			for(var i = 0 ; i < xForses.length; i++){
+				obj[0] += xForses[i];
+			}
+			for (var i = 0; i < yForses.length; i++) {
+				obj[1] += yForses[i];
+			};
+
+			//reset y pos..
+			
+
+			Draw(obj[0] , obj[1]);
+			time --;
+			if (time > 0)setTimeout(loop , 30);
+		}
+		DrawForces();
+		loop();
+
+	</script>
 </body>
 </html>
